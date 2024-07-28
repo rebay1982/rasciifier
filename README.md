@@ -20,7 +20,7 @@ rASCIIfier
 Usage
 
   -f string
-        Filename of PNG image to rASCIIfy.
+        Filename of the PNG image to rASCIIfy.
   -w int
         Maximum character width of output ASCII art. (default 300)
 ```
