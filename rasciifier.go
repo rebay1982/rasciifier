@@ -1,9 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"image/png"
-	"flag"
 	"os"
 
 	"github.com/rebay1982/redscii"
@@ -19,7 +19,7 @@ var (
 )
 
 func parseCmdlineInput() {
-	flag.StringVar(&filename, "f", "", "Filename of PNG image to rASCIIfy.")
+	flag.StringVar(&filename, "f", "", "Filename the of PNG image to rASCIIfy.")
 	flag.IntVar(&widthMax, "w", 300, "Maximum character width of output ASCII art.")
 	flag.Parse()
 }
@@ -52,7 +52,7 @@ func main() {
 
 	bounds := pngImage.Bounds()
 
-	smallImage := redscii.DownscaleImage(pngImage, float64(widthMax >> 1) / float64(bounds.Dx()))
+	smallImage := redscii.DownscaleImage(pngImage, float64(widthMax>>1)/float64(bounds.Dx()))
 	greyImage := redscii.GreyScaleImage(smallImage)
 
 	fmt.Println(appName)
